@@ -5,6 +5,6 @@ tool: "Consigue"
 toolUrl: "https://x.com/askOkara/status/2028769995673755649"
 tweetUrl: "https://x.com/askOkara/status/2028769995673755649"
 tags: ["dev-tools"]
-date: "2026-03-03"
+date: "2026-03-03 03:00:00"
 author: "@askOkara"
 ---

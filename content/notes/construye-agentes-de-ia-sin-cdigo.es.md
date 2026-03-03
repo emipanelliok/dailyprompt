@@ -6,6 +6,6 @@ toolUrl: "https://x.com/ihtesham2005/status/2028514380963536918"
 tweetUrl: "https://x.com/ihtesham2005/status/2028514380963536918"
 repoUrl: "https://github.com/FlowiseAI/Flowise"
 tags: ["vibe-coding", "agentes", "dev-tools", "open-source"]
-date: "2026-03-03"
+date: "2026-03-03 05:00:00"
 author: "@ihtesham2005"
 ---

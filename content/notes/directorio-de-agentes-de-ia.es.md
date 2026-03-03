@@ -5,6 +5,6 @@ tool: "Directorio"
 toolUrl: "https://x.com/midudev/status/2028484987347976479"
 tweetUrl: "https://x.com/midudev/status/2028484987347976479"
 tags: ["agentes", "dev-tools"]
-date: "2026-03-03"
+date: "2026-03-03 06:00:00"
 author: "@midudev"
 ---

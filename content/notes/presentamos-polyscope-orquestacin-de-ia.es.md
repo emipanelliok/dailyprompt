@@ -5,6 +5,6 @@ tool: "Presentamos Polyscope: Orquestación"
 toolUrl: "https://x.com/marcelpociot/status/2028891802191761427"
 tweetUrl: "https://x.com/marcelpociot/status/2028891802191761427"
 tags: ["vibe-coding", "agentes", "dev-tools"]
-date: "2026-03-03"
+date: "2026-03-03 10:00:00"
 author: "@marcelpociot"
 ---

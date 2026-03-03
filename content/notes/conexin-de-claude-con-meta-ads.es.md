@@ -5,6 +5,6 @@ tool: "Conexión"
 toolUrl: "https://x.com/MathiasChu/status/2027123051477815797"
 tweetUrl: "https://x.com/MathiasChu/status/2027123051477815797"
 tags: ["dev-tools"]
-date: "2026-03-03"
+date: "2026-03-03 09:00:00"
 author: "@MathiasChu"
 ---

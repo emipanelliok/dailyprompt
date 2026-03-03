@@ -5,6 +5,6 @@ tool: "Diseña"
 toolUrl: "https://x.com/ErickSky/status/2028890102747758619"
 tweetUrl: "https://x.com/ErickSky/status/2028890102747758619"
 tags: ["vibe-coding", "dev-tools"]
-date: "2026-03-03"
+date: "2026-03-03 02:00:00"
 author: "@ErickSky"
 ---

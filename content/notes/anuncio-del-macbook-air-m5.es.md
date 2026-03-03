@@ -5,6 +5,6 @@ tool: "MacBook Air M5"
 toolUrl: "https://www.apple.com/macbook-air/"
 tweetUrl: "https://x.com/gregjoz/status/2028834884845003121"
 tags: ["herramientas"]
-date: "2026-03-03"
+date: "2026-03-03 00:00:00"
 author: "@gregjoz"
 ---

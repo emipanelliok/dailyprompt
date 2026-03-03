@@ -5,6 +5,6 @@ tool: "Diseña"
 toolUrl: "https://x.com/pablostanley/status/2028863485363601410"
 tweetUrl: "https://x.com/pablostanley/status/2028863485363601410"
 tags: ["vibe-coding", "automatizacion", "dev-tools"]
-date: "2026-03-03"
+date: "2026-03-03 04:00:00"
 author: "@pablostanley"
 ---
