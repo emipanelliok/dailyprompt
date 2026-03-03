@@ -20,7 +20,11 @@ export function Header({ noteCount }: HeaderProps) {
       <div className="max-w-container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Left side - Logo */}
         <a href="/" className="block">
-          <img src="/Dailyprompt.svg" alt="dailyprompt.io - Short AI news. Big ideas." className="h-10 md:h-12" />
+          <img 
+            src="/Dailyprompt.svg" 
+            alt="dailyprompt.io - Short AI news. Big ideas." 
+            className="h-10 md:h-12 dark:invert"
+          />
         </a>
 
         {/* Right side - Note counter and theme toggle */}
