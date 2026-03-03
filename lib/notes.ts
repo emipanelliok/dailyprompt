@@ -45,10 +45,9 @@ export function getAllNotes(): Note[] {
       } as Note;
     });
 
+  // Sort by date descending (newest first)
   return allNotes.sort((a, b) => {
-    if (a.date < b.date) return 1;
-    if (a.date > b.date) return -1;
-    return 0;
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 }
 
