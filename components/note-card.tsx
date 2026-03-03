@@ -81,7 +81,7 @@ export function NoteCard({ note, index }: NoteCardProps) {
         )}
       </div>
 
-      <h2 className="font-serif text-2xl text-foreground mb-3 text-balance">
+      <h2 className="font-serif text-2xl font-bold text-foreground mb-3 text-balance">
         {note.title}
       </h2>
 
