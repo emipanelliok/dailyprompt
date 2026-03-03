@@ -9,6 +9,7 @@ export interface Note {
   tool: string;
   toolUrl: string;
   tweetUrl: string;
+  repoUrl: string;
   tags: string[];
   date: string;
   author: string;
@@ -17,7 +18,6 @@ export interface Note {
 const notesDirectory = path.join(process.cwd(), "content/notes");
 
 export function getAllNotes(): Note[] {
-  // Ensure the directory exists
   if (!fs.existsSync(notesDirectory)) {
     return [];
   }
@@ -38,13 +38,13 @@ export function getAllNotes(): Note[] {
         tool: data.tool || "",
         toolUrl: data.toolUrl || "",
         tweetUrl: data.tweetUrl || "",
+        repoUrl: data.repoUrl || "",
         tags: data.tags || [],
         date: data.date || "",
         author: data.author || "",
       } as Note;
     });
 
-  // Sort by date descending (newest first)
   return allNotes.sort((a, b) => {
     if (a.date < b.date) return 1;
     if (a.date > b.date) return -1;
