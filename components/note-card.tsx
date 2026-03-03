@@ -15,12 +15,16 @@ const TAG_COLORS: Record<string, string> = {
   "open-source": "#66ffaa",
 };
 
+// Format date consistently to avoid hydration mismatch
+function formatDate(dateString: string): string {
+  const months = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+  const [year, month, day] = dateString.split("-");
+  const monthIndex = parseInt(month, 10) - 1;
+  return `${parseInt(day, 10)} de ${months[monthIndex]} de ${year}`;
+}
+
 export function NoteCard({ note, index }: NoteCardProps) {
-  const formattedDate = new Date(note.date).toLocaleDateString("es-AR", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
+  const formattedDate = formatDate(note.date);
 
   return (
     <article
