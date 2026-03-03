@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f5f2ec;
+  --foreground: #1a1a1a;
+  --muted: #777777;
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.06);
+  --input-bg: #ffffff;
+  --input-border: rgba(0, 0, 0, 0.1);
+  --header-bg: rgba(245, 242, 236, 0.85);
+}
+
+.dark {
+  --background: #06060e;
+  --foreground: #f0f0f5;
+  --muted: #888899;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --header-bg: rgba(6, 6, 14, 0.85);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.6s ease, color 0.6s ease;
+  min-height: 100vh;
+}
+
+/* Light mode ambient background */
+body:not(.dark) {
+  background-image: radial-gradient(
+    ellipse 80% 50% at 50% -10%,
+    rgba(255, 140, 66, 0.08),
+    transparent 60%
+  );
+}
+
+/* Dark mode ambient background */
+body.dark {
+  background-image: 
+    radial-gradient(
+      ellipse 60% 40% at 0% 100%,
+      rgba(255, 51, 102, 0.08),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 100% 0%,
+      rgba(0, 229, 255, 0.06),
+      transparent 50%
+    );
+}
+
+/* Card rainbow bar on hover */
+.card-rainbow-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 28px 28px 0 0;
+  background: linear-gradient(90deg, #ff3366, #00e5ff, #ffe066, #66ffaa);
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-rainbow-bar {
+  opacity: 1;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Staggered fade-up animation for cards */
+.card {
+  opacity: 0;
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+/* Toggle switch styles */
+.toggle-circle {
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+              background-color 0.3s ease;
+}
+
+/* Focus styles */
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.3);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
+}
