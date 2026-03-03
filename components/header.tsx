@@ -18,32 +18,10 @@ export function Header({ noteCount }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-[24px] bg-[var(--header-bg)] border-b border-[var(--card-border)] transition-colors duration-[600ms]">
       <div className="max-w-container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Left side - Logo and branding */}
-        <div className="flex items-center gap-4">
-          {/* Logo */}
-          <div 
-            className="w-10 h-10 rounded-[14px] flex items-center justify-center animate-float"
-            style={{
-              background: "linear-gradient(135deg, #ff3366, #00e5ff)",
-            }}
-          >
-            <span className="text-lg" role="img" aria-label="lightning bolt">
-              ⚡
-            </span>
-          </div>
-          
-          {/* Title and tagline */}
-          <div className="flex flex-col">
-            <h1 className="font-serif text-[28px] leading-tight text-foreground">
-              Daily Prompt
-            </h1>
-            <p 
-              className="font-mono text-[8.5px] uppercase tracking-[3.5px] text-muted"
-            >
-              ia · vibe coding · agentes · curado por emi
-            </p>
-          </div>
-        </div>
+        {/* Left side - Logo */}
+        <a href="/" className="block">
+          <img src="/Dailyprompt.svg" alt="dailyprompt.io - Short AI news. Big ideas." className="h-10 md:h-12" />
+        </a>
 
         {/* Right side - Note counter and theme toggle */}
         <div className="flex items-center gap-5">
