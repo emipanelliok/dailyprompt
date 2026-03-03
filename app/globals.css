@@ -84,10 +84,9 @@ body.dark {
   animation: shimmer 2s linear infinite;
 }
 
-/* Staggered fade-up animation for cards */
+/* Cards are visible by default */
 .card {
-  opacity: 0;
-  animation: fadeUp 0.5s ease-out forwards;
+  opacity: 1;
 }
 
 /* Toggle switch styles */

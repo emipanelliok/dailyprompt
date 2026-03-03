@@ -31,7 +31,6 @@ export function NoteCard({ note, index }: NoteCardProps) {
       data-note-slug={note.slug}
       className="card relative bg-card-bg border border-card-border rounded-card p-8 pb-6 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.008] hover:shadow-xl group"
       style={{
-        animationDelay: `${index * 100}ms`,
         padding: "32px 36px 26px",
       }}
     >
