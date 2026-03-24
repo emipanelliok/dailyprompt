@@ -11,7 +11,6 @@ export function NotesFilterClient({ allTags, notesData }: NotesFilterProps) {
   const [activeTag, setActiveTag] = useState("todas");
   const [search, setSearch] = useState("");
 
-  // Filter cards via DOM
   function applyFilters(tag: string, query: string) {
     const cards = document.querySelectorAll("[data-note-slug]");
     cards.forEach((card) => {
@@ -40,18 +39,20 @@ export function NotesFilterClient({ allTags, notesData }: NotesFilterProps) {
   }
 
   return (
-    <>
-      {/* Search - injected into header via portal or passed as prop */}
-      <input
-        type="text"
-        placeholder="Buscar..."
-        value={search}
-        onChange={(e) => handleSearch(e.target.value)}
-        className="hidden sm:block bg-glass border border-glass-border rounded-[10px] py-[0.45rem] px-4 text-[0.78rem] text-text placeholder:text-text-muted font-body outline-none w-40 focus:w-56 transition-all focus:border-accent-orange focus:bg-accent-orange/5"
-      />
+    <div className="flex flex-col items-center gap-5 mb-10">
+      {/* Search bar - centered */}
+      <div className="w-full max-w-md">
+        <input
+          type="text"
+          placeholder="Buscar notas..."
+          value={search}
+          onChange={(e) => handleSearch(e.target.value)}
+          className="w-full bg-glass border border-glass-border rounded-xl py-3 px-5 text-sm text-text placeholder:text-text-muted font-body outline-none transition-all focus:border-accent-orange focus:bg-accent-orange/5 focus:shadow-[0_0_0_3px_rgba(255,109,63,0.1)]"
+        />
+      </div>
 
       {/* Tags */}
-      <div className="flex gap-[0.4rem] flex-wrap justify-center mb-10">
+      <div className="flex gap-[0.4rem] flex-wrap justify-center">
         {["todas", ...allTags].map((tag) => (
           <button
             key={tag}
@@ -66,6 +67,6 @@ export function NotesFilterClient({ allTags, notesData }: NotesFilterProps) {
           </button>
         ))}
       </div>
-    </>
+    </div>
   );
 }
