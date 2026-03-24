@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { NotesFilterClient } from "@/components/notes-filter-client";
 import { NoteCard } from "@/components/note-card";
 import { getAllNotes, getAllTags } from "@/lib/notes";
 
@@ -9,6 +10,13 @@ export const revalidate = 60;
 export default function Home() {
   const notes = getAllNotes();
   const allTags = getAllTags(notes);
+
+  const notesData = notes.map((note) => ({
+    slug: note.slug,
+    title: note.title,
+    summary: note.summary,
+    tags: note.tags,
+  }));
 
   return (
     <div className="min-h-screen flex flex-col relative">
@@ -38,17 +46,8 @@ export default function Home() {
           </p>
         </section>
 
-        {/* Tags */}
-        <div className="flex gap-[0.4rem] flex-wrap justify-center mb-10">
-          {["todas", ...allTags].map((tag) => (
-            <span
-              key={tag}
-              className="font-mono text-[0.6rem] font-medium uppercase tracking-[0.06em] px-[0.85rem] py-[0.4rem] rounded-lg bg-glass border border-glass-border text-text-dim cursor-pointer hover:bg-[rgba(255,255,255,0.08)] hover:text-text hover:-translate-y-px transition-all"
-            >
-              {tag === "todas" ? "todas" : tag}
-            </span>
-          ))}
-        </div>
+        {/* Tags + Search (client component) */}
+        <NotesFilterClient allTags={allTags} notesData={notesData} />
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-20">

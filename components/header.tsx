@@ -20,11 +20,6 @@ export function Header({ noteCount }: HeaderProps) {
           daily<b className="not-italic text-accent-orange">prompt</b>
         </a>
         <div className="flex items-center gap-3">
-          <input
-            type="text"
-            placeholder="Buscar..."
-            className="hidden sm:block bg-glass border border-glass-border rounded-[10px] py-[0.45rem] px-4 text-[0.78rem] text-text placeholder:text-text-muted font-body outline-none w-40 focus:w-56 transition-all focus:border-accent-orange focus:bg-accent-orange/5"
-          />
           {mounted && (
             <button
               onClick={toggleTheme}
