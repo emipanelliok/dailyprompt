@@ -12,12 +12,11 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("dark");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    // Check for saved preference or system preference
     const saved = localStorage.getItem("theme") as Theme | null;
     if (saved) {
       setTheme(saved);
@@ -26,18 +25,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (!mounted) return;
-    
-    const root = document.documentElement;
     const body = document.body;
-    
-    if (theme === "dark") {
-      root.classList.add("dark");
-      body.classList.add("dark");
+    if (theme === "light") {
+      body.classList.add("light");
     } else {
-      root.classList.remove("dark");
-      body.classList.remove("dark");
+      body.classList.remove("light");
     }
-    
     localStorage.setItem("theme", theme);
   }, [theme, mounted]);
 

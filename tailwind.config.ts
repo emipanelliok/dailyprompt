@@ -10,51 +10,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        muted: "var(--muted)",
+        bg: "var(--bg)",
+        surface: "var(--surface)",
+        "surface-2": "var(--surface-2)",
+        glass: "var(--glass)",
+        "glass-border": "var(--glass-border)",
         "card-bg": "var(--card-bg)",
         "card-border": "var(--card-border)",
+        text: "var(--text)",
+        "text-dim": "var(--text-dim)",
+        "text-muted": "var(--text-muted)",
+        accent: {
+          orange: "var(--orange)",
+          blue: "var(--blue)",
+          green: "var(--green)",
+          pink: "var(--pink)",
+          yellow: "var(--yellow)",
+          purple: "var(--purple)",
+        },
       },
       fontFamily: {
-        serif: ["var(--font-instrument-serif)", "Playfair Display", "Georgia", "serif"],
-        mono: ["var(--font-space-mono)", "monospace"],
-      },
-      borderRadius: {
-        "card": "28px",
-        "pill": "18px",
+        display: ["var(--font-instrument-serif)", "Georgia", "serif"],
+        body: ["var(--font-outfit)", "system-ui", "sans-serif"],
+        mono: ["var(--font-ibm-plex-mono)", "monospace"],
       },
       maxWidth: {
-        "container": "1100px",
-      },
-      keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-6px)" },
-        },
-        blink: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.3" },
-        },
-        shimmer: {
-          "0%": { backgroundPosition: "-200% 0" },
-          "100%": { backgroundPosition: "200% 0" },
-        },
-        fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        toggleBounce: {
-          "0%": { transform: "translateX(var(--toggle-start))" },
-          "50%": { transform: "translateX(var(--toggle-mid)) scale(1.1)" },
-          "100%": { transform: "translateX(var(--toggle-end))" },
-        },
-      },
-      animation: {
-        float: "float 5s ease-in-out infinite",
-        blink: "blink 1.5s ease-in-out infinite",
-        shimmer: "shimmer 2s linear infinite",
-        fadeUp: "fadeUp 0.5s ease-out forwards",
+        container: "1200px",
       },
     },
   },

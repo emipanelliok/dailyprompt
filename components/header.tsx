@@ -11,56 +11,40 @@ export function Header({ noteCount }: HeaderProps) {
   const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => { setMounted(true); }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-[24px] bg-[var(--header-bg)] border-b border-[var(--card-border)] transition-colors duration-[600ms]">
-      <div className="max-w-container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Left side - Logo */}
-        <a href="/" className="block">
-          <img 
-            src="/Dailyprompt.svg" 
-            alt="dailyprompt.io - Short AI news. Big ideas." 
-            className="h-10 md:h-12 dark:invert"
-          />
+    <header className="sticky top-0 z-50 w-full glass-nav border-b border-glass-border transition-colors duration-300">
+      <div className="max-w-container mx-auto px-6 py-3 flex items-center justify-between">
+        <a href="/" className="font-display text-[1.4rem] italic text-text hover:opacity-70 transition-opacity">
+          daily<b className="not-italic text-accent-orange">prompt</b>
         </a>
-
-        {/* Right side - Note counter and theme toggle */}
-        <div className="flex items-center gap-5">
-          {/* Note counter */}
-          <div className="flex items-center gap-2 font-mono text-xs text-muted">
-            <span 
-              className="w-2 h-2 rounded-full bg-[#66ffaa] animate-blink"
-              aria-hidden="true"
-            />
-            <span>{noteCount} notas</span>
-          </div>
-
-          {/* Theme toggle */}
-          {mounted ? (
+        <div className="flex items-center gap-3">
+          <input
+            type="text"
+            placeholder="Buscar..."
+            className="hidden sm:block bg-glass border border-glass-border rounded-[10px] py-[0.45rem] px-4 text-[0.78rem] text-text placeholder:text-text-muted font-body outline-none w-40 focus:w-56 transition-all focus:border-accent-orange focus:bg-accent-orange/5"
+          />
+          {mounted && (
             <button
               onClick={toggleTheme}
-              className="relative w-14 h-7 rounded-full p-1 transition-colors duration-[600ms] focus:outline-none focus:ring-2 focus:ring-[#00e5ff] focus:ring-offset-2 focus:ring-offset-background"
-              style={{
-                backgroundColor: theme === "dark" 
-                  ? "rgba(255, 255, 255, 0.1)" 
-                  : "rgba(0, 0, 0, 0.1)",
-              }}
+              className="p-1.5 text-text-muted hover:text-accent-orange transition-colors"
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
             >
-              <span
-                className="toggle-circle block w-5 h-5 rounded-full shadow-md"
-                style={{
-                  backgroundColor: theme === "dark" ? "#00e5ff" : "#ff8c42",
-                  transform: theme === "dark" ? "translateX(28px)" : "translateX(0)",
-                }}
-              />
+              {theme === "dark" ? (
+                <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+              ) : (
+                <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+              )}
             </button>
-          ) : (
-            <div className="w-14 h-7 rounded-full bg-black/10 dark:bg-white/10" />
           )}
+          <span className="font-mono text-[0.6rem] font-medium tracking-wider text-accent-orange bg-accent-orange/10 border border-accent-orange/20 px-[0.65rem] py-[0.3rem] rounded-lg">
+            {noteCount} notas
+          </span>
         </div>
       </div>
     </header>
