@@ -29,7 +29,7 @@ export function NoteCard({ note, index }: NoteCardProps) {
     <article
       data-note-slug={note.slug}
       className="card-container card-animate group relative flex flex-col bg-card-bg border border-card-border rounded-2xl p-7 transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-[rgba(255,255,255,0.06)] hover:border-[rgba(255,255,255,0.1)] hover:-translate-y-[3px] hover:shadow-[0_24px_48px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,255,255,0.05)]"
-      style={{ animationDelay: `${0.1 + index * 0.05}s` } as React.CSSProperties}
+      style={{ animationDelay: `${0.1 + index * 0.05}s`, "--card-accent": style.color } as React.CSSProperties}
     >
       {/* Color bar on hover */}
       <div
@@ -58,12 +58,7 @@ export function NoteCard({ note, index }: NoteCardProps) {
       </div>
 
       {/* Title */}
-      <h3
-        className="font-display text-[1.5rem] font-normal leading-[1.2] tracking-[-0.02em] mb-[0.6rem] transition-colors duration-200"
-        style={{ color: "var(--text)" }}
-        onMouseEnter={(e) => (e.currentTarget.style.color = style.color)}
-        onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text)")}
-      >
+      <h3 className="font-display text-[1.5rem] font-normal leading-[1.2] tracking-[-0.02em] mb-[0.6rem] text-text transition-colors duration-200 group-hover:text-[var(--card-accent)]">
         {note.title}
       </h3>
 
