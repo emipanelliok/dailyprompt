@@ -6,5 +6,5 @@ toolUrl: "https://x.com/humalikeai/status/2036373786417566070?s=12"
 tweetUrl: "https://x.com/humalikeai/status/2036373786417566070?s=12"
 tags: ["ai", "agents", "automation"]
 date: "2026-03-24 11:47:00"
-author: "Emiliano Panelli"
+author: "Humi"
 ---
